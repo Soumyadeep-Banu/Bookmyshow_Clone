@@ -1,3 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .slick-prev {
+  left: 3% !important;
+  z-index: 1;
+  background-color: black !important;
+}
+
+.slick-next {
+  left: 3% !important;
+  z-index: 1;
+}  */
+/* .slick-prev,
+.slick-next {
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.slick-next {
+  right: 1rem;
+}
+
+.slick-prev {
+  left: 1rem;
+}
+.slick-prev:hover,
+.slick-next:hover {
+  color: red;
+  opacity: 1;
+} */
+/* index.css */
+
+.custom-next-arrow,
+.custom-prev-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Specific position */
+.custom-next-arrow {
+  right: 1rem;
+}
+
+.custom-prev-arrow {
+  left: 1rem;
+}
+
+/* Optional hover effect */
+.custom-next-arrow:hover,
+.custom-prev-arrow:hover {
+  color: rgb(174, 161, 161);
+}
+/* Allow arrow containers to overflow */
+/* .slick-slider,
+.slick-list {
+  overflow: visible !important;
+} */
+
+/* Ensure arrows are above other elements */
+/* .slick-prev,
+.slick-next {
+  display: block !important;
+  z-index: 20 !important;
+} */

@@ -1,19 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-//Layout
-
-import DefaultLayoutHOC from "../layout/Default.layout";
-
-//Components
-
-import EntertainmentCard from "../Component/Entertainment/EntertainmentCard.Component";
+// Components
 import HeroCarousel from "../Component/HeroCarousel/HeroCarousel.Component";
 import PosterSlider from "../Component/PosterSlider/PosterSlider.Component";
 
+// Layout Hoc
+import DefaultLayoutHoc from "../layout/Default.layout";
+import EntertainmentCard from "../Component/Entertainment/EntertainmentCard.Component";
+
 const HomePage = () => {
-  const { RecommendedMovies, setRecommendedMovies } = useState([]);
-  const { PremiumMovies, setPremiumMovies } = useState([]);
-  const { onlineStreamingMovies, setonlineStreamingMovies } = useState([]);
+  const [recommendedMovies, setRecommendedMovies] = useState([]);
+  const [premierMovies, setpremierMovies] = useState([]);
+  const [onlineStreamEvents, setonlineStreamEvents] = useState([]);
+
+  useEffect(() => {
+    const requestPopularMovies = async () => {
+      const getPopularMovies = await axios.get("/movie/popular");
+      // const getPopularMovies = await axios.get(
+      //   "https://api.themoviedb.org/3/movie/popular?api_key=f15ec7c371108a73c49e81420902ae3b"
+      // );
+      setRecommendedMovies(getPopularMovies.data.results);
+    };
+    requestPopularMovies();
+  }, []);
+
+  useEffect(() => {
+    const requestTopratedMovies = async () => {
+      const getTopratedMovies = await axios.get("/movie/top_rated");
+      setpremierMovies(getTopratedMovies.data.results);
+    };
+    requestTopratedMovies();
+  }, []);
+
+  useEffect(() => {
+    const requestUpcomingMovies = async () => {
+      const getUpcomingMovies = await axios.get("/movie/upcoming");
+      setonlineStreamEvents(getUpcomingMovies.data.results);
+    };
+    requestUpcomingMovies();
+  }, []);
+
   return (
     <>
       <HeroCarousel />
@@ -23,36 +50,36 @@ const HomePage = () => {
         </h1>
         <EntertainmentCard />
       </div>
+
       <div className="container mx-auto px-4 md:px-12 my-8 ">
         <PosterSlider
           title="Recommended Movies"
           subtitle="List of recommended movies"
-          posters={RecommendedMovies}
+          posters={recommendedMovies}
           isDark={false}
         />
       </div>
+
       <div className="bg-premier-800 py-12">
         <div className="container mx-auto px-4 md:px-12 my-8 flex flex-col gap-3">
           <div className="hidden md:flex">
             <img
-              // src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png"
+              src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png"
               alt="Rupay"
               className="w-full h-full"
             />
           </div>
-          <PosterSlider
-            title="Premiers"
-            subject="Every new relase on Friday"
-            posters={PremiumMovies}
-            isDark={true}
-          />
+          <div className="container mx-auto px-4 md:px-12 my-8 flex flex-col gap-3">
+            <PosterSlider posters={premierMovies} isDark={true} />
+          </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 md:px-12 my-8">
+      <div className="container mx-auto px-4 md:px-12 my-8 ">
         <PosterSlider
-          title="OnlineStreaming"
-          subject="Online Streaming Events"
-          posters={onlineStreamingMovies}
+          title="Online Streaming Events"
+          // subj blank??
+          subtitle=""
+          posters={onlineStreamEvents}
           isDark={false}
         />
       </div>
@@ -60,4 +87,4 @@ const HomePage = () => {
   );
 };
 
-export default DefaultLayoutHOC(HomePage);
+export default DefaultLayoutHoc(HomePage);
