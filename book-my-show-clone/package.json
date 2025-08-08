@@ -2,6 +2,7 @@
   "name": "book-my-show-clone",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Soumyadeep-Banu.github.io/Bookmyshow_Clone",
   "dependencies": {
     "@headlessui/react": "^2.2.7",
     "@testing-library/dom": "^10.4.0",
