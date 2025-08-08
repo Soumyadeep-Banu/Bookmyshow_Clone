@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.6e3a4c89.css",
-    "main.js": "/static/js/main.bfe4c00d.js",
-    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "index.html": "/index.html",
-    "main.6e3a4c89.css.map": "/static/css/main.6e3a4c89.css.map",
-    "main.bfe4c00d.js.map": "/static/js/main.bfe4c00d.js.map"
+    "main.css": "/Bookmyshow_Clone/static/css/main.bac05a93.css",
+    "main.js": "/Bookmyshow_Clone/static/js/main.6913a428.js",
+    "static/media/slick.svg": "/Bookmyshow_Clone/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Bookmyshow_Clone/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Bookmyshow_Clone/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Bookmyshow_Clone/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Bookmyshow_Clone/index.html",
+    "main.bac05a93.css.map": "/Bookmyshow_Clone/static/css/main.bac05a93.css.map",
+    "main.6913a428.js.map": "/Bookmyshow_Clone/static/js/main.6913a428.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e3a4c89.css",
-    "static/js/main.bfe4c00d.js"
+    "static/css/main.bac05a93.css",
+    "static/js/main.6913a428.js"
   ]
 }
